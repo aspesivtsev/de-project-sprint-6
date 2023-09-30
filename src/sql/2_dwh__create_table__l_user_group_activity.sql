@@ -8,5 +8,5 @@ create table STV2023081266__DWH.l_user_group_activity
     load_src                 varchar(20)
 )
     order by load_dt
-    segmented by hk_l_user_group_activity all nodes
+    segmented by hk_user_id all nodes
     partition by load_dt::date group by calendar_hierarchy_day(load_dt::date, 3, 2);
